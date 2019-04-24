@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "327431671278",
+    "firebase_url": "https://donatetwo2-bbc33.firebaseio.com",
+    "project_id": "donatetwo2-bbc33",
+    "storage_bucket": "donatetwo2-bbc33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327431671278:android:7625d90ab8d46123",
+        "android_client_info": {
+          "package_name": "com.abiralsingh.donatetwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327431671278-6ijrm4n26j5qvku4umqukntpjiicnv23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abiralsingh.donatetwo",
+            "certificate_hash": "33d3bb80d16f3eac61821cf233ff1751afee310f"
+          }
+        },
+        {
+          "client_id": "327431671278-l75nnad6alsc0hemhg0543kd6i1jqfut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Sl3ODhGWU2b5XoAoE2tcKa0qz7d00JU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327431671278-l75nnad6alsc0hemhg0543kd6i1jqfut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

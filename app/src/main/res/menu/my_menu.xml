@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_donate"
+        android:title="@string/Donate"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/Setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about_us"
+        android:title="@string/About"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sign_out"
+        android:title="@string/sign_out"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_items_for_donation"
+        android:icon="@drawable/ic_spa_white_24dp"
+        android:title="@string/for_donation"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="@string/cart"
+        app:showAsAction="always" />
+
+
+</menu>

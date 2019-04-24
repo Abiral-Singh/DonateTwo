@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Donate Two</string>
+    <string name="Setting">Setting</string>
+    <string name="About">About</string>
+    <string name="Donate">Donate</string>
+    <string name="Product_name">Product name</string>
+    <string name="Product_detail">\nLocation : \nAvailable till:</string>
+    <string name="Product_detail_hint">Product detail </string>
+    <string name="Password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="tag">Tag</string>
+    <string name="Post_title">Post Title</string>
+    <string name="claim_donation">Claim</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="cart">cart</string>
+    <string name="for_donation">Donated Items</string>
+    <string name="submit">Submit</string>
+    <string name="Claimer_name">Your name /Organisation Name</string>
+    <string name="Claimer_request">Any Details you want to give to the owner</string>
+    <string name="request">Please remove the donation if not availabe or claimed by other user</string>
+    <string-array name="tags">
+        <item> Food</item>
+        <item> Books</item>
+        <item> Clothes</item>
+        <item> Other</item>
+    </string-array>
+</resources>
