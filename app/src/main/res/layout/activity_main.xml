@@ -28,8 +28,6 @@
         android:layout_marginTop="309dp"
         android:layout_marginEnd="49dp"
         android:background="@drawable/text_box"
-
-        android:clickable="true"
         android:elevation="4dp"
         android:ems="15"
         android:gravity="center"
