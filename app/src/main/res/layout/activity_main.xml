@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout_logIn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/layout_bg"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/text_email"
+    <TextView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_height="48dp"
+        android:id="@+id/text_email"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="309dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="219dp"
-        android:backgroundTint="@android:color/darker_gray"
+        android:layout_marginEnd="49dp"
+        android:background="@drawable/text_box"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:gravity="center"
         android:ems="15"
+        android:textColor="#828282"
+        android:textSize="24sp"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
+        />
 
     <EditText
         android:id="@+id/text_password"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="49dp"
         android:layout_below="@+id/text_email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@android:color/darker_gray"
+        android:background="@drawable/text_box"
         android:ems="15"
+        android:elevation="4dp"
         android:hint="@string/Password"
         android:inputType="textPassword"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
+        android:gravity="center"
+        android:textColor="#828282"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button_logIn"
@@ -42,14 +61,15 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:background="@drawable/round_shape_transparent"
         android:layout_below="@id/text_password"
-        android:background="@android:color/transparent"
+        android:elevation="4dp"
         android:onClick="logIn"
         android:shadowRadius="14"
         android:text="@string/log_in"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <Button
@@ -57,16 +77,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/button_logIn"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="15dp"
-        android:alpha="0.6"
-        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_shape_transparent"
         android:onClick="signUp"
         android:shadowRadius="14"
+        android:elevation="4dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/sign_in"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="#774083"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -76,7 +96,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_above="@id/text_password"
+        android:layout_marginBottom="80dp"
         />
 
 </RelativeLayout>
