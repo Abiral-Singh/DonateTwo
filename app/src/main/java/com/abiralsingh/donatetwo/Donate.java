@@ -1,20 +1,27 @@
 package com.abiralsingh.donatetwo;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +29,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 
 public class Donate extends AppCompatActivity {
 
@@ -31,6 +40,14 @@ public class Donate extends AppCompatActivity {
     String tag, postTitle, postContent;
     EditText prodName;
     EditText prodDesc;
+    EditText text_location;
+    Button button_donate;
+    ImageView spinner_icon;
+    TextView text_date;
+    TextView text_condition;
+    Calendar c;
+    DatePickerDialog dpd;
+    Animation anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +67,47 @@ public class Donate extends AppCompatActivity {
                 return true;
             }
         });
+        anim = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
 
+        spinner_icon = findViewById(R.id.spinner_icon);
+        spinner_icon.startAnimation(anim);
         prodName = (EditText) findViewById(R.id.product_name_text);
+        prodName.startAnimation(anim);
         prodDesc = (EditText) findViewById(R.id.product_des_text);
+        prodDesc.startAnimation(anim);
+        text_location = findViewById(R.id.text_location);
+        text_location.startAnimation(anim);
+        text_date = (TextView) findViewById(R.id.text_date);
+        text_date.startAnimation(anim);
+        button_donate=findViewById(R.id.button_donate);
+        button_donate.startAnimation(anim);
+        text_condition = findViewById(R.id.text_conditions);
+        text_condition.startAnimation(anim);
+
+        text_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int month = c.get(Calendar.MONTH);
+                int year = c.get(Calendar.YEAR);
+                dpd = new DatePickerDialog(Donate.this, R.style.MyTimePickerDialogTheme,new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int mYear, int mMonth, int mDayOfMonth) {
+                        text_date.setText(mDayOfMonth+"/"+mMonth+"/"+mYear);
+                    }
+                },day,month,year);
+                dpd.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
+                dpd.show();
+            }
+        });
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_donate);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle("Donate");
 
         Spinner spinner = (Spinner) findViewById(R.id.donate_spinner);
+        spinner.startAnimation(anim);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.tags, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -125,6 +174,16 @@ public class Donate extends AppCompatActivity {
             postTitle = prodName.getText().toString();
             if (prodDesc != null) {
                 postContent = prodDesc.getText().toString();
+            }
+            if(!text_location.getText().toString().isEmpty() &&
+                    !text_date.getText().toString().isEmpty()){
+
+                postContent = postContent
+                        +"\nLocation: "+text_location.getText().toString()
+                        +"\n Available Till: "+text_date.getText().toString();
+            }else {
+                Toast.makeText(getApplicationContext(), "Enter Location and Date", Toast.LENGTH_LONG).show();
+                return false;
             }
             return true;
 

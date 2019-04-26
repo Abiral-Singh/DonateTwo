@@ -2,15 +2,19 @@ package com.abiralsingh.donatetwo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -26,6 +30,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
+    Animation text_box_anim;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthStateListener;
     ProgressBar progressBar;
@@ -35,6 +40,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Animation Load
+        text_box_anim = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
+
+        //start animation
+        TextView text_logo_anim = findViewById(R.id.logo);
+        EditText email_text_anim = (EditText) findViewById(R.id.text_email);
+        EditText password_text_anim = (EditText) findViewById(R.id.text_password);
+        Button logIn_buton_anim = findViewById(R.id.button_logIn);
+        Button signIn_buton_anim = findViewById(R.id.button_signIn);
+
+        Animation delay_anim = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
+        delay_anim.setStartOffset(300);
+        text_logo_anim.startAnimation(text_box_anim);
+        email_text_anim.startAnimation(delay_anim);
+        Animation delay_anim2 = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
+        delay_anim2.setStartOffset(500);
+        password_text_anim.startAnimation(delay_anim2);
+        Animation delay_anim3 = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
+        delay_anim3.setStartOffset(600);
+        logIn_buton_anim.startAnimation(delay_anim3);
+        signIn_buton_anim.startAnimation(delay_anim3);
 
         //Keyboard setting
         findViewById(R.id.relativeLayout_logIn).setOnTouchListener(new View.OnTouchListener() {

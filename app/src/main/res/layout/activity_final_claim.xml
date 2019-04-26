@@ -24,13 +24,26 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_final_claim"
         android:layout_alignParentStart="true">
-
+<TextView
+    android:id="@+id/final_claim_logo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="80dp"
+    android:text="@string/app_name"
+    android:textColor="@color/colorPrimary"
+    android:textSize="40dp"
+    android:textStyle="bold" />
 
         <EditText
             android:id="@+id/claimer_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginRight="49dp"
             android:layout_alignParentTop="true"
+            android:background="@drawable/text_box"
+            android:elevation="4dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="187dp"
             android:hint="@string/Claimer_name"
@@ -42,12 +55,16 @@
 
         <EditText
             android:id="@+id/claimer_request"
-            android:layout_width="341dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginRight="49dp"
+            android:background="@drawable/text_box"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/claimer_name"
             android:layout_marginTop="30dp"
             android:ems="10"
+            android:elevation="4dp"
             android:hint="@string/Claimer_request"
             android:inputType="textMultiLine"
             android:maxLines="3"
@@ -58,6 +75,7 @@
             android:id="@+id/button_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:elevation="4dp"
             android:layout_below="@id/claimer_request"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"

@@ -8,8 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +15,6 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -53,7 +50,7 @@ public class main_page extends AppCompatActivity {
                 .Builder<Donate_Item>().setQuery(query,Donate_Item.class)
                 .build();
 
-        adapter= new MyAdapter(options);
+        adapter= new MyAdapter(options,getApplicationContext());
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         //recyclerView.setHasFixedSize(true);

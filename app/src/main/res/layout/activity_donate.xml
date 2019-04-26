@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relativeLayout_donate_page"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout_donate_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Donate">
@@ -27,73 +27,118 @@
 
         <Spinner
             android:id="@+id/donate_spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="35sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="80dp"
-            android:textAlignment="center" />
+            android:background="@drawable/text_box"
+            android:elevation="4dp"
+            android:pointerIcon="horizontal_double_arrow"
+            android:popupBackground="@drawable/text_box" />
+
+        <ImageView
+            android:id="@+id/spinner_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignLeft="@id/donate_spinner"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="90dp"
+            android:background="@android:drawable/arrow_down_float"
+            android:elevation="5dp"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/product_name_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_below="@id/donate_spinner"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="49dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="49dp"
+            android:background="@drawable/text_box"
+            android:elevation="4dp"
             android:hint="@string/Product_name"
             android:inputType="text"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/text_view_prod_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/product_name_text"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:text="@string/Product_detail_hint"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="20dp"
-            android:hint="@string/Product_detail_hint"
-            android:textAlignment="center" />
-
         <EditText
             android:id="@+id/product_des_text"
-            android:layout_width="341dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_view_prod_desc"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/product_name_text"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="1dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="49dp"
+            android:background="@drawable/text_box"
+            android:elevation="4dp"
             android:ems="10"
-            android:hint="@string/Product_detail"
+            android:hint="@string/Product_detail_hint"
             android:inputType="textMultiLine"
             android:maxLines="3"
-            android:text="@string/Product_detail"
             android:textAlignment="center"
             android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/text_location"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/product_des_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="49dp"
+            android:background="@drawable/text_box"
+            android:elevation="4dp"
+            android:hint="@string/location"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/text_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="49dp"
+            android:background="@drawable/text_box"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:hint="@string/date"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_donate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_below="@id/product_des_text"
+            android:layout_below="@id/text_date"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
+            android:elevation="4dp"
             android:onClick="donate"
             android:text="@string/Donate"
             android:textColor="@android:color/white" />
 
         <TextView
+            android:id="@+id/text_conditions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button_donate"
             android:layout_centerHorizontal="true"
-            android:ems="10"
             android:layout_marginTop="20dp"
+            android:ems="10"
             android:hint="@string/request"
             android:textAlignment="center" />
     </RelativeLayout>
