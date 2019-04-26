@@ -8,6 +8,8 @@
     <string name="Product_detail_hint">Product detail </string>
     <string name="Password">Password</string>
     <string name="log_in">Log In</string>
+    <string name="location">Location</string>
+    <string name="date">Available Till</string>
     <string name="sign_in">Sign In</string>
     <string name="enter_email">Enter Email</string>
     <string name="tag">Tag</string>
