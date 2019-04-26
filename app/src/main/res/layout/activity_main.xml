@@ -32,6 +32,7 @@
         android:ems="15"
         android:gravity="center"
         android:hint="@string/enter_email"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColor="#828282"
         android:textSize="24sp" />
