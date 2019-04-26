@@ -9,7 +9,6 @@
         <item name="android:navigationBarColor">#805B5B5B</item>
     </style>
     <style name="MyTimePickerDialogTheme" parent="@style/Theme.AppCompat.Light.Dialog">
-        <item name="android:textColor">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
 </resources>
