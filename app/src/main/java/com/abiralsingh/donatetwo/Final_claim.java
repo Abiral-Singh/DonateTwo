@@ -3,19 +3,21 @@ package com.abiralsingh.donatetwo;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +34,9 @@ public class Final_claim extends AppCompatActivity {
     EditText cName;
     EditText cRequest;
     Button submitButton;
+    Animation anim;
+    TextView logo;
+
     String response="";
     int total=0;
     Intent i_start;
@@ -60,9 +65,16 @@ public class Final_claim extends AppCompatActivity {
         mToolbar.setTitle("Form");
 
         //setting up view
+        logo=findViewById(R.id.final_claim_logo);
         cName = findViewById(R.id.claimer_name);
         cRequest = findViewById(R.id.claimer_request);
         submitButton = findViewById(R.id.button_submit);
+
+        anim = AnimationUtils.loadAnimation(this,R.anim.text_box_entry);
+        logo.startAnimation(anim);
+        cName.startAnimation(anim);
+        cRequest.startAnimation(anim);
+        submitButton.startAnimation(anim);
 
         //default result of intent
         setResult(Activity.RESULT_CANCELED);
