@@ -49,7 +49,7 @@ public class items_donated extends AppCompatActivity {
                 .Builder<Donate_Item>().setQuery(query, Donate_Item.class)
                 .build();
 
-        adapter = new MyAdapter_2(options);
+        adapter = new MyAdapter_2(options,getApplicationContext());
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view_items_donated);
         // recyclerView.setHasFixedSize(true);

@@ -1,15 +1,14 @@
 package com.abiralsingh.donatetwo;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.support.v7.widget.Toolbar;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,7 +46,7 @@ public class Cart extends AppCompatActivity {
                 .Builder<Donate_Item>().setQuery(query, Donate_Item.class)
                 .build();
 
-        adapter = new MyAdapter_2(options);
+        adapter = new MyAdapter_2(options,getApplicationContext());
         RecyclerView recyclerView = findViewById(R.id.recycler_view_cart);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

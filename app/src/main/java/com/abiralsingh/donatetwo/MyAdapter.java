@@ -3,6 +3,7 @@ package com.abiralsingh.donatetwo;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donate_Item, MyAdapter.My
     private OnItemClickListener listener;
     Context applicatioContext;
     int delay=100;
+    int count=0;
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -39,6 +41,10 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donate_Item, MyAdapter.My
 
     @Override
     protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Donate_Item model) {
+        if(position==getItemCount()-1){
+            count=0;
+            delay=100;
+        }
         holder.textViewPost_title.setText(model.getPostTitle());
         holder.textViewPost_tag.setText(model.getTag());
         holder.textViewPost_desc.setText(model.getPostDesc()) ;
@@ -46,7 +52,13 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donate_Item, MyAdapter.My
         Animation anim = AnimationUtils.loadAnimation(applicatioContext,R.anim.text_box_entry);
         anim.setStartOffset(delay);
         holder.relativeLayout.startAnimation(anim);
-        delay=delay+200;
+        delay=delay+150;
+        count++;
+        if(count>3){
+            delay=100;
+            count=0;
+        }
+        Log.i("delay",String.valueOf(delay)+":pos:"+String.valueOf(position));
     }
 
     @NonNull
@@ -56,6 +68,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donate_Item, MyAdapter.My
                 parent,false);
         return new MyViewHolder(v);
     }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout relativeLayout;
